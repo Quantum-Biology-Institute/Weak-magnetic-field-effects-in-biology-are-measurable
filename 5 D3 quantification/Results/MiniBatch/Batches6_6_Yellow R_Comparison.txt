@@ -1,0 +1,140 @@
+Avg Control:
+161.23117097902337
+Median Control:
+162.0261922189231
+Std Control:
+7.031626318521143
+
+Avg Hypo:
+164.86924577222038
+Median Hypo:
+164.82606329439855
+Std Hypo:
+7.5057829633475475
+
+
+Cohen effect size, one std:
+-0.4845167367789045
+Cohen effect size, pooled std:
+-0.49831851252789794
+Effect visibility, in percent:
+-1.1156302188881304
+Binhi effect size, in percent:
+1.5776347696406527
+Modified Binhi effect size, in percent:
+1.5760744231708528
+True Binhi effect size, in percent (Clarice believes this formula is wrong; denominator takes mean of control only):
+2.256415052710256
+Stats for all 6_6 batches combined:
+
+T test results (if normal distributions) (T-stat, p-value):
+('C', 'H', -5.509849522505159, 5.8452083126373844e-08)
+Mann-Whitney test results (if non-normal distributions) (U-stat, p-value):
+('C', 'H', 21383.0, 1.360508292718113e-07)
+Kolmogorov normality test results (p-values for C and H); if p-value > 0.05 or 0.01: distribution is normal:
+('C', 'H', 0.0, 0.0)
+Shapiro normality test results (p-values for C and H); if p-value > 0.05 or 0.01: distribution is normal:
+('C', 'H', 0.017301958054304123, 0.0010240169940516353)
+
+
+
+Stats for each batch:
+
+T test results (T-stat, p-value):
+('B6 Frog1 C\n(n=99)', 'B6 Frog1 H\n(n=115)', -3.5447580867533857, 0.0004883473121672439)
+('B6 Frog2 C\n(n=131)', 'B6 Frog2 H\n(n=142)', -4.335501206107541, 2.058130543611297e-05)
+Mann-Whitney test results (U-stat, p-value):
+('B6 Frog1 C\n(n=99)', 'B6 Frog1 H\n(n=115)', 4282.0, 0.001796660244990565)
+('B6 Frog2 C\n(n=131)', 'B6 Frog2 H\n(n=142)', 6343.0, 5.68021241379919e-06)
+Kolmogorov normality test results (p-values for C and H); if p-value > 0.05 or 0.01: distribution is normal:
+('B6 Frog1 C\n(n=99)', 'B6 Frog1 H\n(n=115)', 0.0, 0.0)
+('B6 Frog2 C\n(n=131)', 'B6 Frog2 H\n(n=142)', 0.0, 0.0)
+Shapiro normality test results (p-values for C and H); if p-value > 0.05 or 0.01: distribution is normal:
+('B6 Frog1 C\n(n=99)', 'B6 Frog1 H\n(n=115)', 0.17236576974391937, 0.7687305212020874)
+('B6 Frog2 C\n(n=131)', 'B6 Frog2 H\n(n=142)', 0.1752004474401474, 8.044130663620308e-05)
+
+
+
+ANOVA (if normal distribution) Controls (fstat, p-value, Tukey):
+4.332490572491774
+0.03850770101436034
+Multiple Comparison of Means - Tukey HSD, FWER=0.05 
+====================================================
+ group1  group2 meandiff p-adj  lower  upper  reject
+----------------------------------------------------
+Batch1C Batch2C   1.9393 0.0385 0.1035 3.7751   True
+----------------------------------------------------
+If True, it means that there is a statistically significant difference between the means of the two groups.
+
+Kruskal-Wallis (if non-normal distribution) Controls (statistic, p_value, Dunn p-value):
+3.8587210460909773
+0.049488038472220185
+          Batch1C   Batch2C
+Batch1C  1.000000  0.049488
+Batch2C  0.049488  1.000000
+If < 0.05 or 0.01, it means that there is a statistically significant difference between the two groups.
+
+
+
+
+ANOVA (if normal distribution) Hypo (fstat, p_value):
+5.456838502481468
+0.020267400494441614
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+===================================================
+ group1  group2 meandiff p-adj  lower upper  reject
+---------------------------------------------------
+Batch1H Batch2H   2.1849 0.0203 0.343 4.0269   True
+---------------------------------------------------
+If True, it means that there is a statistically significant difference between the means of the two groups.
+
+Kruskal-Wallis (if non-normal distribution) Hypos (statistic, p-value, Dunn p-value):
+8.504775060880888
+0.0035421569728551743
+          Batch1H   Batch2H
+Batch1H  1.000000  0.003542
+Batch2H  0.003542  1.000000
+If < 0.05 or 0.01, it means that there is a statistically significant difference between the two groups.
+
+
+
+
+2-way ANOVA table:
+                             sum_sq     df          F        PR(>F)
+C(Condition)            1637.285126    1.0  31.213816  3.865993e-08
+C(Batch)                 513.601975    1.0   9.791500  1.859240e-03
+C(Condition):C(Batch)      1.802635    1.0   0.034366  8.530080e-01
+Residual               25335.214106  483.0        NaN           NaN
+Tukey HSD for Condition (Hypo or Control):
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+=================================================
+ group1 group2 meandiff p-adj lower upper  reject
+-------------------------------------------------
+Control   Hypo   3.6381   0.0 2.336 4.9401   True
+-------------------------------------------------
+Tukey HSD for Batch:
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+=================================================
+group1 group2 meandiff p-adj  lower  upper reject
+-------------------------------------------------
+Batch1 Batch2   2.0061 0.0034 0.6683 3.344   True
+-------------------------------------------------
+
+
+Tukey HSD for interaction of Condition and Batch:
+
+Tukey HSD for Control:
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+==================================================
+group1 group2 meandiff p-adj  lower  upper  reject
+--------------------------------------------------
+Batch1 Batch2   1.9393 0.0385 0.1035 3.7751   True
+--------------------------------------------------
+
+Tukey HSD for Hypo:
+Multiple Comparison of Means - Tukey HSD, FWER=0.05
+=================================================
+group1 group2 meandiff p-adj  lower upper  reject
+-------------------------------------------------
+Batch1 Batch2   2.1849 0.0203 0.343 4.0269   True
+-------------------------------------------------

@@ -1,0 +1,532 @@
+Avg Control:
+0.17843589363076556
+Median Control:
+0.17989751039641483
+Std Control:
+0.04305497284896944
+
+Avg Hypo:
+0.16859770823377726
+Median Hypo:
+0.178748822362826
+Std Hypo:
+0.04224788575294261
+
+
+Cohen effect size, pooled std:
+0.2304912927958686
+Effect visibility, in percent:
+2.834937407827277
+True Binhi effect size, in percent:
+5.512969631884235
+Cohen effect size, one std:
+0.22919162328499348
+Modified Binhi effect size 1, in percent:
+4.007366795112675
+Modified Binhi effect size 2, in percent:
+3.891829462985958
+Stats for all 1_2_3_4_5_6_7 batches combined:
+
+T test results (if normal distributions) (T-stat, p-value):
+('C', 'H', 3.7366674985249797, 0.00019656098105684205)
+Mann-Whitney test results (if non-normal distributions) (U-stat, p-value):
+('C', 'H', 153289.0, 0.0027352600004825144)
+Kolmogorov normality test results (p-values for C and H); if p-value > 0.05 or 0.01: distribution is normal:
+('C', 'H', 8.844868207494368e-133, 3.650667782290788e-136)
+Shapiro normality test results (p-values for C and H); if p-value > 0.05 or 0.01: distribution is normal:
+('C', 'H', 0.0034181750379502773, 1.4950653562384453e-11)
+
+
+
+Stats for each batch:
+
+T test results (T-stat, p-value):
+('B1C', 'B1H', 2.5856106772299507, 0.010958160568490017)
+('B2C', 'B2H', 4.241499941297729, 4.510707615157195e-05)
+('B3C', 'B3H', -0.43882369006755756, 0.6617260592896135)
+('B4C', 'B4H', 1.3129382184317655, 0.20657539827652519)
+('B5C', 'B5H', 2.178987791382288, 0.03347323872954723)
+('B6C', 'B6H', 0.12047096527255896, 0.9041687087488117)
+('B7C', 'B7H', 4.999409974408828, 1.4297856067140148e-06)
+('+1C', '+1H', -2.410535662600514, 0.01627922837410771)
+('+2C', '+2H', 0.3160449080052985, 0.7530096062866458)
+Mann-Whitney test results (U-stat, p-value):
+('B1C', 'B1H', 2248.0, 0.018246631241973926)
+('B2C', 'B2H', 2794.0, 4.273957044848784e-05)
+('B3C', 'B3H', 1408.0, 0.8885074720409505)
+('B4C', 'B4H', 72.0, 0.2136207303090525)
+('B5C', 'B5H', 691.0, 0.03176020859639008)
+('B6C', 'B6H', 21913.0, 0.6625391064796355)
+('B7C', 'B7H', 6155.0, 1.4752649192229247e-05)
+('+1C', '+1H', 29949.0, 0.029407594230233175)
+('+2C', '+2H', 620.0, 0.4631551973735526)
+Kolmogorov normality test results (p-values for C and H); if p-value > 0.05 or 0.01: distribution is normal:
+('B1C', 'B1H', 6.962013617525741e-17, 5.1199788182635835e-17)
+('B2C', 'B2H', 6.9830286254852635e-15, 4.6493040454051165e-18)
+('B3C', 'B3H', 2.6655035001138558e-14, 1.3348380063161244e-14)
+('B4C', 'B4H', 0.0007080596272881815, 0.005298662211663192)
+('B5C', 'B5H', 7.111566474314267e-10, 1.424826781543983e-10)
+('B6C', 'B6H', 2.582887576578948e-60, 7.705670428644923e-62)
+('B7C', 'B7H', 7.640850761098754e-29, 8.888647943133944e-29)
+('+1C', '+1H', 1.8562293700232262e-76, 7.108270552131746e-80)
+('+2C', '+2H', 1.2743132161919096e-10, 2.764581640083255e-10)
+Shapiro normality test results (p-values for C and H); if p-value > 0.05 or 0.01: distribution is normal:
+('B1C', 'B1H', 0.49557775259017944, 0.1249130517244339)
+('B2C', 'B2H', 0.31030502915382385, 0.009239786304533482)
+('B3C', 'B3H', 0.0001680957357166335, 2.3525102221810812e-07)
+('B4C', 'B4H', 0.8825480341911316, 0.8985646367073059)
+('B5C', 'B5H', 0.0419500470161438, 0.21595388650894165)
+('B6C', 'B6H', 1.9689293822011678e-06, 0.0010148396249860525)
+('B7C', 'B7H', 0.022764159366488457, 0.7111155986785889)
+('+1C', '+1H', 0.425839900970459, 0.429146945476532)
+('+2C', '+2H', 0.6755932569503784, 0.08772630244493484)
+
+
+
+ANOVA (if normal distribution) Controls (fstat, p-value, Tukey):
+125.73114661967954
+1.007587641655175e-135
+ Multiple Comparison of Means - Tukey HSD, FWER=0.01  
+======================================================
+ group1  group2 meandiff p-adj   lower   upper  reject
+------------------------------------------------------
+Batch1C Batch2C  -0.0621   -0.0 -0.0806 -0.0437   True
+Batch1C Batch3C  -0.0706   -0.0 -0.0893 -0.0519   True
+Batch1C Batch4C  -0.0435    0.0 -0.0747 -0.0122   True
+Batch1C Batch5C   0.0275 0.0002  0.0056  0.0494   True
+Batch1C Batch6C  -0.0112 0.1328 -0.0258  0.0035  False
+Batch1C Batch7C    0.024    0.0  0.0076  0.0405   True
+Batch1C Batch8C   0.0233    0.0   0.009  0.0376   True
+Batch1C Batch9C   0.0105 0.7014 -0.0108  0.0317  False
+Batch2C Batch3C  -0.0085 0.7895 -0.0274  0.0104  False
+Batch2C Batch4C   0.0186 0.4435 -0.0127    0.05  False
+Batch2C Batch5C   0.0896   -0.0  0.0675  0.1116   True
+Batch2C Batch6C    0.051   -0.0  0.0361  0.0658   True
+Batch2C Batch7C   0.0861   -0.0  0.0696  0.1027   True
+Batch2C Batch8C   0.0854   -0.0  0.0709  0.0999   True
+Batch2C Batch9C   0.0726   -0.0  0.0511   0.094   True
+Batch3C Batch4C   0.0272 0.0501 -0.0043  0.0587  False
+Batch3C Batch5C   0.0981   -0.0  0.0758  0.1204   True
+Batch3C Batch6C   0.0595   -0.0  0.0443  0.0746   True
+Batch3C Batch7C   0.0947   -0.0  0.0778  0.1116   True
+Batch3C Batch8C   0.0939   -0.0  0.0791  0.1088   True
+Batch3C Batch9C   0.0811   -0.0  0.0594  0.1027   True
+Batch4C Batch5C   0.0709    0.0  0.0374  0.1044   True
+Batch4C Batch6C   0.0323 0.0024  0.0031  0.0616   True
+Batch4C Batch7C   0.0675   -0.0  0.0373  0.0977   True
+Batch4C Batch8C   0.0668   -0.0  0.0377  0.0958   True
+Batch4C Batch9C   0.0539    0.0  0.0208   0.087   True
+Batch5C Batch6C  -0.0386    0.0 -0.0576 -0.0197   True
+Batch5C Batch7C  -0.0034 0.9996 -0.0238  0.0169  False
+Batch5C Batch8C  -0.0042 0.9967 -0.0229  0.0145  False
+Batch5C Batch9C   -0.017 0.2294 -0.0415  0.0074  False
+Batch6C Batch7C   0.0352   -0.0   0.023  0.0474   True
+Batch6C Batch8C   0.0345   -0.0  0.0253  0.0436   True
+Batch6C Batch9C   0.0216 0.0007  0.0034  0.0398   True
+Batch7C Batch8C  -0.0007    1.0 -0.0126  0.0111  False
+Batch7C Batch9C  -0.0136 0.2394 -0.0333  0.0061  False
+Batch8C Batch9C  -0.0128 0.1981 -0.0308  0.0051  False
+------------------------------------------------------
+If True, it means that there is a statistically significant difference between the means of the two groups.
+
+Kruskal-Wallis (if non-normal distribution) Controls (statistic, p_value, Dunn p-value):
+392.6860294314388
+6.868465804710557e-80
+              Batch1C       Batch2C       Batch3C       Batch4C       Batch5C       Batch6C       Batch7C       Batch8C       Batch9C
+Batch1C  1.000000e+00  9.059812e-10  9.375706e-10  1.266503e-02  7.304170e-02  2.709355e-01  6.854193e-03  1.097722e-04  1.000000e+00
+Batch2C  9.059812e-10  1.000000e+00  1.000000e+00  1.000000e+00  1.839492e-16  5.225017e-07  4.012619e-27  1.479655e-37  5.337412e-11
+Batch3C  9.375706e-10  1.000000e+00  1.000000e+00  1.000000e+00  2.027821e-16  5.615163e-07  1.145201e-26  1.596545e-36  5.241164e-11
+Batch4C  1.266503e-02  1.000000e+00  1.000000e+00  1.000000e+00  3.113650e-06  4.718501e-01  3.636094e-07  3.076957e-08  8.252397e-04
+Batch5C  7.304170e-02  1.839492e-16  2.027821e-16  3.113650e-06  1.000000e+00  6.581545e-07  1.000000e+00  1.000000e+00  1.000000e+00
+Batch6C  2.709355e-01  5.225017e-07  5.615163e-07  4.718501e-01  6.581545e-07  1.000000e+00  6.959656e-15  2.824448e-29  7.628595e-03
+Batch7C  6.854193e-03  4.012619e-27  1.145201e-26  3.636094e-07  1.000000e+00  6.959656e-15  1.000000e+00  1.000000e+00  1.000000e+00
+Batch8C  1.097722e-04  1.479655e-37  1.596545e-36  3.076957e-08  1.000000e+00  2.824448e-29  1.000000e+00  1.000000e+00  1.000000e+00
+Batch9C  1.000000e+00  5.337412e-11  5.241164e-11  8.252397e-04  1.000000e+00  7.628595e-03  1.000000e+00  1.000000e+00  1.000000e+00
+If < 0.05 or 0.01, it means that there is a statistically significant difference between the two groups.
+
+
+
+
+ANOVA (if normal distribution) Hypo (fstat, p_value):
+188.7417602251184
+1.6469937547641207e-180
+ Multiple Comparison of Means - Tukey HSD, FWER=0.01  
+======================================================
+ group1  group2 meandiff p-adj   lower   upper  reject
+------------------------------------------------------
+Batch1H Batch2H  -0.0713   -0.0 -0.0877  -0.055   True
+Batch1H Batch3H  -0.0517   -0.0 -0.0692 -0.0343   True
+Batch1H Batch4H  -0.0394 0.0008 -0.0729  -0.006   True
+Batch1H Batch5H   0.0271    0.0  0.0071  0.0471   True
+Batch1H Batch6H   0.0038 0.9848 -0.0097  0.0173  False
+Batch1H Batch7H   0.0212    0.0  0.0059  0.0365   True
+Batch1H Batch8H   0.0433   -0.0  0.0301  0.0566   True
+Batch1H Batch9H   0.0239 0.0008  0.0037  0.0441   True
+Batch2H Batch3H   0.0196 0.0012  0.0026  0.0365   True
+Batch2H Batch4H   0.0319 0.0165 -0.0013  0.0651  False
+Batch2H Batch5H   0.0984   -0.0  0.0788   0.118   True
+Batch2H Batch6H   0.0751   -0.0  0.0622   0.088   True
+Batch2H Batch7H   0.0925   -0.0  0.0778  0.1073   True
+Batch2H Batch8H   0.1146   -0.0   0.102  0.1272   True
+Batch2H Batch9H   0.0952   -0.0  0.0754   0.115   True
+Batch3H Batch4H   0.0123 0.9273 -0.0214   0.046  False
+Batch3H Batch5H   0.0788   -0.0  0.0583  0.0993   True
+Batch3H Batch6H   0.0555   -0.0  0.0413  0.0698   True
+Batch3H Batch7H    0.073   -0.0   0.057  0.0889   True
+Batch3H Batch8H   0.0951   -0.0   0.081  0.1091   True
+Batch3H Batch9H   0.0756   -0.0  0.0549  0.0963   True
+Batch4H Batch5H   0.0665    0.0  0.0314  0.1016   True
+Batch4H Batch6H   0.0432    0.0  0.0113  0.0751   True
+Batch4H Batch7H   0.0607    0.0   0.028  0.0933   True
+Batch4H Batch8H   0.0828   -0.0   0.051  0.1145   True
+Batch4H Batch9H   0.0633    0.0  0.0281  0.0986   True
+Batch5H Batch6H  -0.0233 0.0001 -0.0406  -0.006   True
+Batch5H Batch7H  -0.0059 0.9703 -0.0246  0.0129  False
+Batch5H Batch8H   0.0162 0.0185 -0.0008  0.0333  False
+Batch5H Batch9H  -0.0032 0.9999 -0.0261  0.0197  False
+Batch6H Batch7H   0.0174    0.0  0.0059   0.029   True
+Batch6H Batch8H   0.0395   -0.0  0.0309  0.0482   True
+Batch6H Batch9H   0.0201 0.0013  0.0026  0.0376   True
+Batch7H Batch8H   0.0221    0.0  0.0109  0.0333   True
+Batch7H Batch9H   0.0026 0.9999 -0.0163  0.0216  False
+Batch8H Batch9H  -0.0195 0.0019 -0.0368 -0.0021   True
+------------------------------------------------------
+If True, it means that there is a statistically significant difference between the means of the two groups.
+
+Kruskal-Wallis (if non-normal distribution) Hypos (statistic, p-value, Dunn p-value):
+479.18028042444666
+2.056027803226679e-98
+              Batch1H       Batch2H       Batch3H       Batch4H       Batch5H       Batch6H       Batch7H       Batch8H       Batch9H
+Batch1H  1.000000e+00  1.821341e-08  4.619462e-04  5.928310e-01  3.789971e-02  1.000000e+00  3.149258e-02  8.769107e-17  1.935029e-01
+Batch2H  1.821341e-08  1.000000e+00  1.000000e+00  1.000000e+00  5.206448e-16  2.396042e-13  1.801156e-23  6.699137e-65  5.465243e-14
+Batch3H  4.619462e-04  1.000000e+00  1.000000e+00  1.000000e+00  1.835595e-10  5.364604e-06  6.534845e-14  4.452016e-41  5.966789e-09
+Batch4H  5.928310e-01  1.000000e+00  1.000000e+00  1.000000e+00  1.211623e-03  4.767696e-01  2.177591e-03  2.546367e-08  3.916816e-03
+Batch5H  3.789971e-02  5.206448e-16  1.835595e-10  1.211623e-03  1.000000e+00  4.108219e-03  1.000000e+00  1.196739e-01  1.000000e+00
+Batch6H  1.000000e+00  2.396042e-13  5.364604e-06  4.767696e-01  4.108219e-03  1.000000e+00  2.255106e-04  2.910216e-40  3.768308e-02
+Batch7H  3.149258e-02  1.801156e-23  6.534845e-14  2.177591e-03  1.000000e+00  2.255106e-04  1.000000e+00  2.928897e-07  1.000000e+00
+Batch8H  8.769107e-17  6.699137e-65  4.452016e-41  2.546367e-08  1.196739e-01  2.910216e-40  2.928897e-07  1.000000e+00  2.134946e-02
+Batch9H  1.935029e-01  5.465243e-14  5.966789e-09  3.916816e-03  1.000000e+00  3.768308e-02  1.000000e+00  2.134946e-02  1.000000e+00
+If < 0.05 or 0.01, it means that there is a statistically significant difference between the two groups.
+
+
+
+
+2-way ANOVA table:
+                         sum_sq      df           F         PR(>F)
+C(Condition)           0.007256     1.0   10.204443   1.427968e-03
+C(Batch)               1.730787     8.0  304.277067  3.320243e-316
+C(Condition):C(Batch)  0.041720     8.0    7.334492   1.288073e-09
+Residual               1.152570  1621.0         NaN            NaN
+Tukey HSD for Condition (Hypo or Control):
+Multiple Comparison of Means - Tukey HSD, FWER=0.01
+===================================================
+ group1 group2 meandiff p-adj   lower  upper reject
+---------------------------------------------------
+Control   Hypo  -0.0054 0.0105 -0.0107   0.0  False
+---------------------------------------------------
+Tukey HSD for Batch:
+Multiple Comparison of Means - Tukey HSD, FWER=0.01 
+====================================================
+group1 group2 meandiff p-adj   lower   upper  reject
+----------------------------------------------------
+Batch1 Batch2  -0.0678    0.0 -0.0803 -0.0554   True
+Batch1 Batch3  -0.0609    0.0 -0.0739 -0.0479   True
+Batch1 Batch4  -0.0404    0.0 -0.0635 -0.0173   True
+Batch1 Batch5   0.0272    0.0  0.0121  0.0422   True
+Batch1 Batch6  -0.0034 0.9517 -0.0135  0.0067  False
+Batch1 Batch7   0.0229    0.0  0.0115  0.0343   True
+Batch1 Batch8   0.0336    0.0  0.0237  0.0435   True
+Batch1 Batch9   0.0174 0.0009  0.0025  0.0323   True
+Batch2 Batch3   0.0069 0.5919 -0.0059  0.0197  False
+Batch2 Batch4   0.0274 0.0007  0.0044  0.0504   True
+Batch2 Batch5    0.095    0.0  0.0801  0.1099   True
+Batch2 Batch6   0.0644    0.0  0.0545  0.0743   True
+Batch2 Batch7   0.0907    0.0  0.0795  0.1019   True
+Batch2 Batch8   0.1014    0.0  0.0917  0.1111   True
+Batch2 Batch9   0.0852    0.0  0.0705     0.1   True
+Batch3 Batch4   0.0205 0.0417 -0.0028  0.0438  False
+Batch3 Batch5   0.0881    0.0  0.0727  0.1034   True
+Batch3 Batch6   0.0575    0.0  0.0469  0.0681   True
+Batch3 Batch7   0.0838    0.0   0.072  0.0956   True
+Batch3 Batch8   0.0945    0.0  0.0841  0.1048   True
+Batch3 Batch9   0.0783    0.0  0.0631  0.0936   True
+Batch4 Batch5   0.0676    0.0   0.043  0.0921   True
+Batch4 Batch6    0.037    0.0  0.0151  0.0588   True
+Batch4 Batch7   0.0633    0.0  0.0408  0.0857   True
+Batch4 Batch8    0.074    0.0  0.0522  0.0957   True
+Batch4 Batch9   0.0578    0.0  0.0334  0.0823   True
+Batch5 Batch6  -0.0306    0.0 -0.0436 -0.0176   True
+Batch5 Batch7  -0.0043 0.9746 -0.0183  0.0098  False
+Batch5 Batch8   0.0064 0.6878 -0.0064  0.0193  False
+Batch5 Batch9  -0.0097 0.5013 -0.0267  0.0073  False
+Batch6 Batch7   0.0263    0.0  0.0178  0.0348   True
+Batch6 Batch8    0.037    0.0  0.0306  0.0434   True
+Batch6 Batch9   0.0209    0.0   0.008  0.0337   True
+Batch7 Batch8   0.0107 0.0001  0.0024   0.019   True
+Batch7 Batch9  -0.0055 0.8926 -0.0193  0.0084  False
+Batch8 Batch9  -0.0161 0.0002 -0.0288 -0.0035   True
+----------------------------------------------------
+
+
+Tukey HSD for interaction of Condition and Batch:
+
+Tukey HSD for Control:
+Multiple Comparison of Means - Tukey HSD, FWER=0.01 
+====================================================
+group1 group2 meandiff p-adj   lower   upper  reject
+----------------------------------------------------
+Batch1 Batch2  -0.0621   -0.0 -0.0806 -0.0437   True
+Batch1 Batch3  -0.0706   -0.0 -0.0893 -0.0519   True
+Batch1 Batch4  -0.0435    0.0 -0.0747 -0.0122   True
+Batch1 Batch5   0.0275 0.0002  0.0056  0.0494   True
+Batch1 Batch6  -0.0112 0.1328 -0.0258  0.0035  False
+Batch1 Batch7    0.024    0.0  0.0076  0.0405   True
+Batch1 Batch8   0.0233    0.0   0.009  0.0376   True
+Batch1 Batch9   0.0105 0.7014 -0.0108  0.0317  False
+Batch2 Batch3  -0.0085 0.7895 -0.0274  0.0104  False
+Batch2 Batch4   0.0186 0.4435 -0.0127    0.05  False
+Batch2 Batch5   0.0896   -0.0  0.0675  0.1116   True
+Batch2 Batch6    0.051   -0.0  0.0361  0.0658   True
+Batch2 Batch7   0.0861   -0.0  0.0696  0.1027   True
+Batch2 Batch8   0.0854   -0.0  0.0709  0.0999   True
+Batch2 Batch9   0.0726   -0.0  0.0511   0.094   True
+Batch3 Batch4   0.0272 0.0501 -0.0043  0.0587  False
+Batch3 Batch5   0.0981   -0.0  0.0758  0.1204   True
+Batch3 Batch6   0.0595   -0.0  0.0443  0.0746   True
+Batch3 Batch7   0.0947   -0.0  0.0778  0.1116   True
+Batch3 Batch8   0.0939   -0.0  0.0791  0.1088   True
+Batch3 Batch9   0.0811   -0.0  0.0594  0.1027   True
+Batch4 Batch5   0.0709    0.0  0.0374  0.1044   True
+Batch4 Batch6   0.0323 0.0024  0.0031  0.0616   True
+Batch4 Batch7   0.0675   -0.0  0.0373  0.0977   True
+Batch4 Batch8   0.0668   -0.0  0.0377  0.0958   True
+Batch4 Batch9   0.0539    0.0  0.0208   0.087   True
+Batch5 Batch6  -0.0386    0.0 -0.0576 -0.0197   True
+Batch5 Batch7  -0.0034 0.9996 -0.0238  0.0169  False
+Batch5 Batch8  -0.0042 0.9967 -0.0229  0.0145  False
+Batch5 Batch9   -0.017 0.2294 -0.0415  0.0074  False
+Batch6 Batch7   0.0352   -0.0   0.023  0.0474   True
+Batch6 Batch8   0.0345   -0.0  0.0253  0.0436   True
+Batch6 Batch9   0.0216 0.0007  0.0034  0.0398   True
+Batch7 Batch8  -0.0007    1.0 -0.0126  0.0111  False
+Batch7 Batch9  -0.0136 0.2394 -0.0333  0.0061  False
+Batch8 Batch9  -0.0128 0.1981 -0.0308  0.0051  False
+----------------------------------------------------
+
+Tukey HSD for Hypo:
+Multiple Comparison of Means - Tukey HSD, FWER=0.01 
+====================================================
+group1 group2 meandiff p-adj   lower   upper  reject
+----------------------------------------------------
+Batch1 Batch2  -0.0713   -0.0 -0.0877  -0.055   True
+Batch1 Batch3  -0.0517   -0.0 -0.0692 -0.0343   True
+Batch1 Batch4  -0.0394 0.0008 -0.0729  -0.006   True
+Batch1 Batch5   0.0271    0.0  0.0071  0.0471   True
+Batch1 Batch6   0.0038 0.9848 -0.0097  0.0173  False
+Batch1 Batch7   0.0212    0.0  0.0059  0.0365   True
+Batch1 Batch8   0.0433   -0.0  0.0301  0.0566   True
+Batch1 Batch9   0.0239 0.0008  0.0037  0.0441   True
+Batch2 Batch3   0.0196 0.0012  0.0026  0.0365   True
+Batch2 Batch4   0.0319 0.0165 -0.0013  0.0651  False
+Batch2 Batch5   0.0984   -0.0  0.0788   0.118   True
+Batch2 Batch6   0.0751   -0.0  0.0622   0.088   True
+Batch2 Batch7   0.0925   -0.0  0.0778  0.1073   True
+Batch2 Batch8   0.1146   -0.0   0.102  0.1272   True
+Batch2 Batch9   0.0952   -0.0  0.0754   0.115   True
+Batch3 Batch4   0.0123 0.9273 -0.0214   0.046  False
+Batch3 Batch5   0.0788   -0.0  0.0583  0.0993   True
+Batch3 Batch6   0.0555   -0.0  0.0413  0.0698   True
+Batch3 Batch7    0.073   -0.0   0.057  0.0889   True
+Batch3 Batch8   0.0951   -0.0   0.081  0.1091   True
+Batch3 Batch9   0.0756   -0.0  0.0549  0.0963   True
+Batch4 Batch5   0.0665    0.0  0.0314  0.1016   True
+Batch4 Batch6   0.0432    0.0  0.0113  0.0751   True
+Batch4 Batch7   0.0607    0.0   0.028  0.0933   True
+Batch4 Batch8   0.0828   -0.0   0.051  0.1145   True
+Batch4 Batch9   0.0633    0.0  0.0281  0.0986   True
+Batch5 Batch6  -0.0233 0.0001 -0.0406  -0.006   True
+Batch5 Batch7  -0.0059 0.9703 -0.0246  0.0129  False
+Batch5 Batch8   0.0162 0.0185 -0.0008  0.0333  False
+Batch5 Batch9  -0.0032 0.9999 -0.0261  0.0197  False
+Batch6 Batch7   0.0174    0.0  0.0059   0.029   True
+Batch6 Batch8   0.0395   -0.0  0.0309  0.0482   True
+Batch6 Batch9   0.0201 0.0013  0.0026  0.0376   True
+Batch7 Batch8   0.0221    0.0  0.0109  0.0333   True
+Batch7 Batch9   0.0026 0.9999 -0.0163  0.0216  False
+Batch8 Batch9  -0.0195 0.0019 -0.0368 -0.0021   True
+----------------------------------------------------
+
+
+
+ART-ANOVA table:
+                             sum_sq      df           F         PR(>F)
+C(Condition)           5.957968e+05     1.0    5.656489   1.750620e-02
+C(Batch)               1.904550e+08     8.0  226.022285  2.379569e-257
+C(Condition):C(Batch)  4.729564e+06     8.0    5.612804   4.835802e-07
+Residual               1.707396e+08  1621.0         NaN            NaN
+Tukey for Condition (Hypo or Control) using ART-ANOVA:
+  Multiple Comparison of Means - Tukey HSD, FWER=0.01  
+=======================================================
+ group1 group2 meandiff p-adj    lower    upper  reject
+-------------------------------------------------------
+Control   Hypo   -48.97 0.0362 -109.2113 11.2713  False
+-------------------------------------------------------
+Tukey Interaction using ART-ANOVA:
+            Multiple Comparison of Means - Tukey HSD, FWER=0.01            
+===========================================================================
+    group1         group2      meandiff  p-adj    lower      upper   reject
+---------------------------------------------------------------------------
+Control_Batch1 Control_Batch2  -593.3153    0.0  -833.5155  -353.115   True
+Control_Batch1 Control_Batch3  -603.9366    0.0   -847.571 -360.3022   True
+Control_Batch1 Control_Batch4  -539.7557    0.0  -946.3614 -133.1501   True
+Control_Batch1 Control_Batch5   325.8437  0.001    40.5914   611.096   True
+Control_Batch1 Control_Batch6  -191.6147 0.0091   -381.996   -1.2335   True
+Control_Batch1 Control_Batch7   294.1802    0.0    80.5322  507.8283   True
+Control_Batch1 Control_Batch8   322.0341    0.0   135.7848  508.2835   True
+Control_Batch1 Control_Batch9   141.0041 0.8638  -135.9256  417.9337  False
+Control_Batch1    Hypo_Batch1  -193.7369 0.0994  -427.9493   40.4754  False
+Control_Batch1    Hypo_Batch2  -701.2581    0.0  -928.9099 -473.6064   True
+Control_Batch1    Hypo_Batch3  -575.6354    0.0  -818.0882 -333.1826   True
+Control_Batch1    Hypo_Batch4  -600.5613    0.0 -1059.8981 -141.2246   True
+Control_Batch1    Hypo_Batch5   135.4452 0.8993  -141.4844  412.3749  False
+Control_Batch1    Hypo_Batch6  -197.4409 0.0053  -387.0519     -7.83   True
+Control_Batch1    Hypo_Batch7    61.9697 0.9996  -151.6784  275.6178  False
+Control_Batch1    Hypo_Batch8   389.6468    0.0    203.463  575.8306   True
+Control_Batch1    Hypo_Batch9    85.3882 0.9993  -194.1742  364.9506  False
+Control_Batch2 Control_Batch3   -10.6213    1.0  -256.3242  235.0816  False
+Control_Batch2 Control_Batch4    53.5595    1.0   -354.289   461.408  False
+Control_Batch2 Control_Batch5    919.159    0.0   632.1379 1206.1801   True
+Control_Batch2 Control_Batch6   401.7005    0.0   208.6792  594.7219   True
+Control_Batch2 Control_Batch7   887.4955    0.0   671.4915 1103.4994   True
+Control_Batch2 Control_Batch8   915.3494    0.0   726.4022 1104.2966   True
+Control_Batch2 Control_Batch9   734.3193    0.0   455.5681 1013.0706   True
+Control_Batch2    Hypo_Batch1   399.5783    0.0    163.215  635.9417   True
+Control_Batch2    Hypo_Batch2  -107.9429 0.9275   -337.807  121.9213  False
+Control_Batch2    Hypo_Batch3    17.6799    1.0  -226.8514  262.2112  False
+Control_Batch2    Hypo_Batch4     -7.246    1.0  -467.6833  453.1912  False
+Control_Batch2    Hypo_Batch5   728.7605    0.0   450.0093 1007.5118   True
+Control_Batch2    Hypo_Batch6   395.8743    0.0   203.6127   588.136   True
+Control_Batch2    Hypo_Batch7    655.285    0.0    439.281  871.2889   True
+Control_Batch2    Hypo_Batch8   982.9621    0.0   794.0795 1171.8447   True
+Control_Batch2    Hypo_Batch9   678.7035    0.0   397.3365  960.0704   True
+Control_Batch3 Control_Batch4    64.1808    1.0  -345.6996  474.0612  False
+Control_Batch3 Control_Batch5   929.7803    0.0   639.8792 1219.6814   True
+Control_Batch3 Control_Batch6   412.3218    0.0   215.0434  609.6003   True
+Control_Batch3 Control_Batch7   898.1168    0.0   678.3003 1117.9332   True
+Control_Batch3 Control_Batch8   925.9707    0.0   732.6766 1119.2648   True
+Control_Batch3 Control_Batch9   744.9406    0.0   463.2248 1026.6565   True
+Control_Batch3    Hypo_Batch1   410.1996    0.0   170.3472  650.0521   True
+Control_Batch3    Hypo_Batch2   -97.3216 0.9755   -330.772  136.1288  False
+Control_Batch3    Hypo_Batch3    28.3012    1.0  -219.6043  276.2067  False
+Control_Batch3    Hypo_Batch4     3.3753    1.0  -458.8628  465.6133  False
+Control_Batch3    Hypo_Batch5   739.3818    0.0    457.666 1021.0976   True
+Control_Batch3    Hypo_Batch6   406.4956    0.0   209.9604  603.0308   True
+Control_Batch3    Hypo_Batch7   665.9063    0.0   446.0898  885.7227   True
+Control_Batch3    Hypo_Batch8   993.5834    0.0   800.3525 1186.8143   True
+Control_Batch3    Hypo_Batch9   689.3248    0.0   405.0205   973.629   True
+Control_Batch4 Control_Batch5   865.5995    0.0   429.6945 1301.5044   True
+Control_Batch4 Control_Batch6    348.141 0.0338   -32.5022  728.7842  False
+Control_Batch4 Control_Batch7    833.936    0.0   441.1387 1226.7333   True
+Control_Batch4 Control_Batch8   861.7899    0.0   483.1964 1240.3834   True
+Control_Batch4 Control_Batch9   680.7598    0.0   250.2551 1111.2645   True
+Control_Batch4    Hypo_Batch1   346.0188 0.0713   -58.3321  750.3697  False
+Control_Batch4    Hypo_Batch2  -161.5024 0.9824  -562.0889  239.0841  False
+Control_Batch4    Hypo_Batch3   -35.8796    1.0  -445.0588  373.2995  False
+Control_Batch4    Hypo_Batch4   -60.8056    1.0  -626.1678  504.5567  False
+Control_Batch4    Hypo_Batch5    675.201    0.0   244.6963 1105.7057   True
+Control_Batch4    Hypo_Batch6   342.3148 0.0409   -37.9437  722.5733  False
+Control_Batch4    Hypo_Batch7   601.7254    0.0   208.9281  994.5227   True
+Control_Batch4    Hypo_Batch8   929.4026    0.0   550.8413 1307.9638   True
+Control_Batch4    Hypo_Batch9   625.1439    0.0    192.941 1057.3469   True
+Control_Batch5 Control_Batch6  -517.4584    0.0  -764.2984 -270.6185   True
+Control_Batch5 Control_Batch7   -31.6635    1.0  -296.8624  233.5354  False
+Control_Batch5 Control_Batch8    -3.8096    1.0  -247.4769  239.8578  False
+Control_Batch5 Control_Batch9  -184.8397 0.6882  -503.2341  133.5547  False
+Control_Batch5    Hypo_Batch1  -519.5806    0.0  -801.6097 -237.5516   True
+Control_Batch5    Hypo_Batch2 -1027.1018    0.0 -1303.7067 -750.4969   True
+Control_Batch5    Hypo_Batch3  -901.4791    0.0 -1190.3879 -612.5703   True
+Control_Batch5    Hypo_Batch4   -926.405    0.0 -1411.8689 -440.9411   True
+Control_Batch5    Hypo_Batch5  -190.3985 0.6368  -508.7929  127.9959  False
+Control_Batch5    Hypo_Batch6  -523.2846    0.0   -769.531 -277.0383   True
+Control_Batch5    Hypo_Batch7   -263.874 0.0108  -529.0729    1.3248  False
+Control_Batch5    Hypo_Batch8    63.8031 0.9999  -179.8141  307.4203  False
+Control_Batch5    Hypo_Batch9  -240.4555 0.2201  -561.1424   80.2314  False
+Control_Batch6 Control_Batch7   485.7949    0.0   327.0292  644.5607   True
+Control_Batch6 Control_Batch8   513.6489    0.0   394.2759  633.0218   True
+Control_Batch6 Control_Batch9   332.6188    0.0    95.4456   569.792   True
+Control_Batch6    Hypo_Batch1    -2.1222    1.0  -187.6391  183.3947  False
+Control_Batch6    Hypo_Batch2  -509.6434    0.0  -686.8055 -332.4813   True
+Control_Batch6    Hypo_Batch3  -384.0207    0.0   -579.838 -188.2033   True
+Control_Batch6    Hypo_Batch4  -408.9466  0.025  -845.4684   27.5753  False
+Control_Batch6    Hypo_Batch5     327.06    0.0    89.8868  564.2331   True
+Control_Batch6    Hypo_Batch6    -5.8262    1.0   -130.379  118.7266  False
+Control_Batch6    Hypo_Batch7   253.5844    0.0    94.8186  412.3502   True
+Control_Batch6    Hypo_Batch8   581.2615    0.0   461.9909  700.5322   True
+Control_Batch6    Hypo_Batch9   277.0029 0.0008    36.7609  517.2449   True
+Control_Batch7 Control_Batch8    27.8539    1.0  -125.9328  181.6407  False
+Control_Batch7 Control_Batch9  -153.1762 0.6373  -409.4018  103.0495  False
+Control_Batch7    Hypo_Batch1  -487.9171    0.0  -697.2422 -278.5921   True
+Control_Batch7    Hypo_Batch2  -995.4383    0.0 -1197.3959 -793.4808   True
+Control_Batch7    Hypo_Batch3  -869.8156    0.0 -1088.3217 -651.3095   True
+Control_Batch7    Hypo_Batch4  -894.7415    0.0 -1341.9012 -447.5818   True
+Control_Batch7    Hypo_Batch5   -158.735 0.5714  -414.9607   97.4907  False
+Control_Batch7    Hypo_Batch6  -491.6212    0.0  -649.4624 -333.7799   True
+Control_Batch7    Hypo_Batch7  -232.2105 0.0001  -418.2402  -46.1808   True
+Control_Batch7    Hypo_Batch8    95.4666 0.5666   -58.2408   249.174  False
+Control_Batch7    Hypo_Batch9   -208.792 0.1256  -467.8609   50.2769  False
+Control_Batch8 Control_Batch9  -181.0301 0.1745  -414.8996   52.8394  False
+Control_Batch8    Hypo_Batch1  -515.7711    0.0  -697.0452 -334.4969   True
+Control_Batch8    Hypo_Batch2 -1023.2923    0.0 -1196.0065 -850.5781   True
+Control_Batch8    Hypo_Batch3  -897.6695    0.0 -1089.4721 -705.8669   True
+Control_Batch8    Hypo_Batch4  -922.5955    0.0 -1357.3312 -487.8598   True
+Control_Batch8    Hypo_Batch5  -186.5889 0.1369  -420.4584   47.2805  False
+Control_Batch8    Hypo_Batch6  -519.4751    0.0  -637.6157 -401.3345   True
+Control_Batch8    Hypo_Batch7  -260.0645    0.0  -413.8512 -106.2777   True
+Control_Batch8    Hypo_Batch8    67.6127 0.6287   -44.9453  180.1706  False
+Control_Batch8    Hypo_Batch9   -236.646 0.0102   -473.627    0.3351  False
+Control_Batch9    Hypo_Batch1   -334.741 0.0002  -608.3493  -61.1326   True
+Control_Batch9    Hypo_Batch2  -842.2622    0.0  -1110.276 -574.2483   True
+Control_Batch9    Hypo_Batch3  -716.6394    0.0   -997.334 -435.9448   True
+Control_Batch9    Hypo_Batch4  -741.5654    0.0 -1222.1862 -260.9446   True
+Control_Batch9    Hypo_Batch5    -5.5588    1.0  -316.5189  305.4012  False
+Control_Batch9    Hypo_Batch6   -338.445    0.0  -575.0003 -101.8897   True
+Control_Batch9    Hypo_Batch7   -79.0344 0.9992    -335.26  177.1913  False
+Control_Batch9    Hypo_Batch8   248.6428 0.0037    14.8255    482.46   True
+Control_Batch9    Hypo_Batch9   -55.6159    1.0  -368.9228  257.6911  False
+   Hypo_Batch1    Hypo_Batch2  -507.5212    0.0  -731.1209 -283.9215   True
+   Hypo_Batch1    Hypo_Batch3  -381.8984    0.0  -620.5506 -143.2463   True
+   Hypo_Batch1    Hypo_Batch4  -406.8244 0.0469  -864.1664   50.5177  False
+   Hypo_Batch1    Hypo_Batch5   329.1822 0.0003    55.5738  602.7905   True
+   Hypo_Batch1    Hypo_Batch6     -3.704    1.0  -188.4303  181.0223  False
+   Hypo_Batch1    Hypo_Batch7   255.7066 0.0002    46.3816  465.0317   True
+   Hypo_Batch1    Hypo_Batch8   583.3837    0.0    402.177  764.5905   True
+   Hypo_Batch1    Hypo_Batch9   279.1251 0.0085     2.8524  555.3979   True
+   Hypo_Batch2    Hypo_Batch3   125.6228 0.7941  -106.5942  357.8397  False
+   Hypo_Batch2    Hypo_Batch4   100.6968    1.0  -353.3204   554.714  False
+   Hypo_Batch2    Hypo_Batch5   836.7034    0.0   568.6895 1104.7172   True
+   Hypo_Batch2    Hypo_Batch6   503.8172    0.0   327.4832  680.1512   True
+   Hypo_Batch2    Hypo_Batch7   763.2278    0.0   561.2702  965.1854   True
+   Hypo_Batch2    Hypo_Batch8  1090.9049    0.0   918.2614 1263.5485   True
+   Hypo_Batch2    Hypo_Batch9   786.6463    0.0    515.913 1057.3796   True
+   Hypo_Batch3    Hypo_Batch4   -24.9259    1.0  -486.5423  436.6904  False
+   Hypo_Batch3    Hypo_Batch5   711.0806    0.0    430.386  991.7752   True
+   Hypo_Batch3    Hypo_Batch6   378.1944    0.0   183.1259   573.263   True
+   Hypo_Batch3    Hypo_Batch7   637.6051    0.0    419.099  856.1111   True
+   Hypo_Batch3    Hypo_Batch8   965.2822    0.0   773.5433 1157.0211   True
+   Hypo_Batch3    Hypo_Batch9   661.0236    0.0   377.7312  944.3159   True
+   Hypo_Batch4    Hypo_Batch5   736.0065    0.0   255.3857 1216.6273   True
+   Hypo_Batch4    Hypo_Batch6   403.1204 0.0297   -33.0661  839.3068  False
+   Hypo_Batch4    Hypo_Batch7    662.531    0.0   215.3713 1109.6907   True
+   Hypo_Batch4    Hypo_Batch8   990.2081    0.0   555.5005 1424.9157   True
+   Hypo_Batch4    Hypo_Batch9   685.9495    0.0   203.8069  1168.092   True
+   Hypo_Batch5    Hypo_Batch6  -332.8862    0.0  -569.4415  -96.3308   True
+   Hypo_Batch5    Hypo_Batch7   -73.4755 0.9997  -329.7012  182.7501  False
+   Hypo_Batch5    Hypo_Batch8   254.2016 0.0025    20.3843  488.0188   True
+   Hypo_Batch5    Hypo_Batch9    -50.057    1.0   -363.364  263.2499  False
+   Hypo_Batch6    Hypo_Batch7   259.4106    0.0   101.5694  417.2519   True
+   Hypo_Batch6    Hypo_Batch8   587.0877    0.0   469.0505   705.125   True
+   Hypo_Batch6    Hypo_Batch9   282.8291 0.0005    43.1971  522.4612   True
+   Hypo_Batch7    Hypo_Batch8   327.6771    0.0   173.9697  481.3845   True
+   Hypo_Batch7    Hypo_Batch9    23.4185    1.0  -235.6504  282.4874  False
+   Hypo_Batch8    Hypo_Batch9  -304.2586 0.0001  -541.1882  -67.3291   True
+---------------------------------------------------------------------------
