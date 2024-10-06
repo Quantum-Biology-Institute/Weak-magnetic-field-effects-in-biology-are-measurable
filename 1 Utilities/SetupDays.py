@@ -204,7 +204,7 @@ def Setup_D2D3():
     successful_stages = [f"stage {str(s)}" for s in successful_stages]
     if not ut.is_decreasing(roundns): # Roundness should be decreasing
         raise ValueError("Roundness is not strictly decreasing!") 
-    add_test('roundness', 'Roundnesses:', 0.1, 0.6, [0.25, 0.5], roundns, successful_stages,'') 
+    #add_test('roundness', 'Roundnesses:', 0.1, 0.6, [0.25, 0.5], roundns, successful_stages,'') 
 
     #add_test('area', 'Areas:', 0.5, 1.5, [0.75, 1.0, 1.25], [1.0], '', 'norm.')
     

@@ -2,6 +2,8 @@
 
 import os
 import numpy as np
+import uncertainties as unc
+import uncertainties.unumpy as unp
 import ast
 import matplotlib.colors as mcolors
 import matplotlib.pyplot as plt
@@ -266,7 +268,7 @@ def replace_D_list(filtered_stage, rem_idx=False):
 def remove_indices_from_list(original_list, indices_to_remove):
     return [value for i, value in enumerate(original_list) if i not in indices_to_remove]
 
-def plot_poster(fig, axes, font_title, font_text, SMALL_SIZE, MEDIUM_SIZE, BIGGER_SIZE, colorlist, my_batch, my_condition, my_plate, d1_path, d2_path, d3_path, stages, surviving, avg_stages, std_stages, output_path_pdf, output_path_png, save=True, my_dpi=600):
+def plot_poster(fig, axes, font_title, font_text, SMALL_SIZE, MEDIUM_SIZE, BIGGER_SIZE, colorlist, my_batch, my_condition, my_plate, d1_path, d2_path, d3_path, stages, surviving, avg_stages, std_stages, output_path_pdf, output_path_png, conditionlist, save=True, my_dpi=600):
     
     # Adjusting padding to bring subplots closer together
     fig.tight_layout(pad=0.5)
@@ -299,7 +301,11 @@ def plot_poster(fig, axes, font_title, font_text, SMALL_SIZE, MEDIUM_SIZE, BIGGE
         combined_image.paste(d2_image, (0, 334))
         combined_image.paste(d3_image, (0, 668))
         ax.imshow(combined_image)
-        ax.set_title(f'#{i}, stages: ' + str(stages[0][i-1]) + '/' + str(stages[2][i-1]), fontproperties=font_text,color=colorlist[i-1])
+        #ax.set_title(f'#{i}, stages: ' + str(stages[0][i-1]) + '/' + str(stages[2][i-1]), fontproperties=font_text,color=colorlist[i-1])
+        if conditionlist[i-1] != '':
+            ax.set_title(f'#{i}: {conditionlist[i-1]}', fontproperties=font_text,color=colorlist[i-1])
+        else:
+            ax.set_title(f'#{i}', fontproperties=font_text,color=colorlist[i-1])
         ax.title.set_size(MEDIUM_SIZE)
         ax.axis('off')
         
@@ -320,12 +326,12 @@ def plot_poster(fig, axes, font_title, font_text, SMALL_SIZE, MEDIUM_SIZE, BIGGE
     plt.subplots_adjust(top=0.9, bottom=0.05, left=0.05, right=0.95)
     
     # Add a line of text at the bottom of the figure
-    footer_text = ('1 div = 200 px $\cdot$ surviving: ' + str(surviving[0]) + ', ' 
-                                                        + str(surviving[1]) + ', ' 
-                                                        + str(surviving[2]) + '/24 $\cdot$ avg. stages: ' 
-                                                        + str(avg_stages[0]) + '$\pm$' + str(std_stages[0]) + ' in day 1, ' 
+    footer_text = ('1 div = 200 px $\cdot$ ' + str(surviving[2]) + '/24 alive on day 3') # ', ' 
+                                                        #+ str(surviving[1]) + ', ' 
+                                                        #+ str(surviving[2]) + '/24') # $\cdot$ avg. stages: ' 
+                                                      #  + str(avg_stages[0]) + '$\pm$' + str(std_stages[0]) + ' in day 1, ' 
                                                        # + str(avg_stages[1]) + '$\pm$' + str(std_stages[1]) + ', '  
-                                                        + str(avg_stages[2]) + '$\pm$' + str(std_stages[2]) + ' in day 3')
+                                                       # + str(avg_stages[2]) + '$\pm$' + str(std_stages[2]) + ' in day 3')
     fig.text(0.5, 0, footer_text, ha='center', fontsize=MEDIUM_SIZE, fontproperties=font_text)
     
     # Save the figure
@@ -335,13 +341,27 @@ def plot_poster(fig, axes, font_title, font_text, SMALL_SIZE, MEDIUM_SIZE, BIGGE
     
     plt.show()
         
-def plot_poster_48(fig, axes, font_title, font_text, SMALL_SIZE, MEDIUM_SIZE, BIGGER_SIZE, colorlist, my_batch, my_condition, my_plate, d1_path, d2_path, d3_path, stages, surviving, avg_stages, std_stages, output_path_pdf, output_path_png, save=True, my_dpi=600):
+def plot_poster_48(fig, axes, font_title, font_text, SMALL_SIZE, MEDIUM_SIZE, BIGGER_SIZE, colorlist, my_batch, my_condition, my_plate, d1_path, d2_path, d3_path, stages, surviving, avg_stages, std_stages, output_path_pdf, output_path_png, conditionlist, save=True, my_dpi=600):
     
     # Adjusting padding to bring subplots closer together
     fig.tight_layout(pad=0.5)
     plt.subplots_adjust(wspace=0.1, hspace=0.3)  # Adjust as needed
     
-    for i in range(1, 49): #49
+    #For batch 8 only
+    # if my_plate == 6 and my_condition == 'C':
+    #     endnum = 38
+    # elif my_plate == 6 and my_condition == 'H':
+    #     endnum = 38
+    # else:
+    #     endnum = 49
+    
+    #For batch 9 only
+    #endnum = 40
+    
+    # All other batches
+    endnum = 49
+        
+    for i in range(1, endnum): 
         if i < 10:
             d1_image_path = os.path.join(d1_path, f'B{my_batch}{my_condition}D1P{my_plate}-0{i}.pdf')
             d2_image_path = os.path.join(d2_path, f'B{my_batch}{my_condition}D2P{my_plate}-0{i}.pdf')
@@ -368,7 +388,13 @@ def plot_poster_48(fig, axes, font_title, font_text, SMALL_SIZE, MEDIUM_SIZE, BI
         combined_image.paste(d2_image, (0, 334))
         combined_image.paste(d3_image, (0, 668))
         ax.imshow(combined_image)
-        ax.set_title(f'#{i}, stages: ' + str(stages[0][i-1]) + '/' + str(stages[2][i-1]), fontproperties=font_text,color=colorlist[i-1])
+        
+        #ax.set_title(f'#{i}, stages: ' + str(stages[0][i-1]) + '/' + str(stages[2][i-1]), fontproperties=font_text,color=colorlist[i-1])
+        if conditionlist[i-1] != '':
+            ax.set_title(f'#{i}: {conditionlist[i-1]}', fontproperties=font_text,color=colorlist[i-1])
+        else:
+            ax.set_title(f'#{i}', fontproperties=font_text,color=colorlist[i-1])
+        
         ax.title.set_size(MEDIUM_SIZE)
         ax.axis('off')
         
@@ -389,12 +415,14 @@ def plot_poster_48(fig, axes, font_title, font_text, SMALL_SIZE, MEDIUM_SIZE, BI
     plt.subplots_adjust(top=0.95, bottom=0.025, left=0.05, right=0.95)
     
     # Add a line of text at the bottom of the figure
-    footer_text = ('1 div = 200 px $\cdot$ surviving: ' + str(surviving[0]) + ', ' 
-                                                        + str(surviving[1]) + ', ' 
-                                                        + str(surviving[2]) + '/24 $\cdot$ avg. stages: ' 
-                                                        + str(avg_stages[0]) + '$\pm$' + str(std_stages[0]) + ' in day 1, ' 
-                                                       # + str(avg_stages[1]) + '$\pm$' + str(std_stages[1]) + ', '  
-                                                        + str(avg_stages[2]) + '$\pm$' + str(std_stages[2]) + ' in day 3')
+    footer_text = ('1 div = 200 px $\cdot$ ' + str(surviving[2]) + '/48 alive on day 3')
+    
+    # footer_text = ('1 div = 200 px $\cdot$ surviving: ' + str(surviving[0]) + ', ' 
+    #                                                     + str(surviving[1]) + ', ' 
+    #                                                     + str(surviving[2]) + '/24 $\cdot$ avg. stages: ' 
+    #                                                     + str(avg_stages[0]) + '$\pm$' + str(std_stages[0]) + ' in day 1, ' 
+    #                                                    # + str(avg_stages[1]) + '$\pm$' + str(std_stages[1]) + ', '  
+    #                                                     + str(avg_stages[2]) + '$\pm$' + str(std_stages[2]) + ' in day 3')
     fig.text(0.5, 0, footer_text, ha='center', fontsize=MEDIUM_SIZE, fontproperties=font_text)
     
     # Save the figure
@@ -404,7 +432,7 @@ def plot_poster_48(fig, axes, font_title, font_text, SMALL_SIZE, MEDIUM_SIZE, BI
     
     plt.show()
     
-def plot_poster_7days(fig, axes, font_title, font_text, SMALL_SIZE, MEDIUM_SIZE, BIGGER_SIZE, colorlist, my_batch, my_condition, my_plate, d1_path, d2_path, d3_path, d4_path, d5_path, d6_path, d7_path, stages, surviving, avg_stages, std_stages, output_path_pdf, output_path_png, save=True, my_dpi=600):
+def plot_poster_7days(fig, axes, font_title, font_text, SMALL_SIZE, MEDIUM_SIZE, BIGGER_SIZE, colorlist, my_batch, my_condition, my_plate, d1_path, d2_path, d3_path, d4_path, d5_path, d6_path, d7_path, stages, surviving, avg_stages, std_stages, output_path_pdf, output_path_png, conditionlist, save=True, my_dpi=600):
     
     # Adjusting padding to bring subplots closer together
     fig.tight_layout(pad=0.5)
@@ -457,7 +485,13 @@ def plot_poster_7days(fig, axes, font_title, font_text, SMALL_SIZE, MEDIUM_SIZE,
         combined_image.paste(d6_image, (0, 1670))
         combined_image.paste(d7_image, (0, 2004))
         ax.imshow(combined_image)
-        ax.set_title(f'#{i}, stages D1/D3: ' + str(stages[0][i-1]) + '/' + str(stages[2][i-1]), fontproperties=font_text,color=colorlist[i-1])
+        #ax.set_title(f'#{i}, stages D1/D3: ' + str(stages[0][i-1]) + '/' + str(stages[2][i-1]), fontproperties=font_text,color=colorlist[i-1])
+        if conditionlist[i-1] != '':
+            ax.set_title(f'#{i}: {conditionlist[i-1]}', fontproperties=font_text,color=colorlist[i-1])
+        else:
+            ax.set_title(f'#{i}', fontproperties=font_text,color=colorlist[i-1])
+        
+        
         ax.title.set_size(MEDIUM_SIZE)
         ax.axis('off')
         
@@ -477,17 +511,20 @@ def plot_poster_7days(fig, axes, font_title, font_text, SMALL_SIZE, MEDIUM_SIZE,
 
     plt.subplots_adjust(top=0.9, bottom=0.05, left=0.05, right=0.95)
     
+    footer_text = ('1 div = 200 px $\cdot$ ' + str(surviving[2]) + '/24 alive on day 3')
     # Add a line of text at the bottom of the figure
-    footer_text = ('1 div = 200 px $\cdot$ surviving: ' + str(surviving[0]) + ', ' 
-                                                        + str(surviving[1]) + ', ' 
-                                                        + str(surviving[2]) + '/24 $\cdot$ avg. stages: ' 
-                                                        + str(avg_stages[0]) + '$\pm$' + str(std_stages[0]) + ', ' 
-                                                        + str(avg_stages[1]) + '$\pm$' + str(std_stages[1]) + ', '  
-                                                        + str(avg_stages[2]) + '$\pm$' + str(std_stages[2]))
+    # footer_text = ('1 div = 200 px $\cdot$ surviving: ' + str(surviving[0]) + ', ' 
+    #                                                     + str(surviving[1]) + ', ' 
+    #                                                     + str(surviving[2]) + '/24 $\cdot$ avg. stages: ' 
+    #                                                     + str(avg_stages[0]) + '$\pm$' + str(std_stages[0]) + ', ' 
+    #                                                     + str(avg_stages[1]) + '$\pm$' + str(std_stages[1]) + ', '  
+    #                                                     + str(avg_stages[2]) + '$\pm$' + str(std_stages[2]))
     fig.text(0.5, 0, footer_text, ha='center', fontsize=MEDIUM_SIZE, fontproperties=font_text)
     
     # Save the figure
+    print(save)
     if save:
+        print('saving')
         plt.savefig(output_path_pdf, format='pdf', dpi=my_dpi, bbox_inches='tight')
         plt.savefig(output_path_png, format='png', dpi=my_dpi, bbox_inches='tight')
     
@@ -6145,43 +6182,6 @@ def process_images_to_plot(image_array_list, target_size=None):
 
     return processed_images
 
-def calculate_percent_diff_old(concatenated, percentile=5):
-    """
-    Calculate the percentage difference between the average of the top 5% largest 
-    and bottom 5% smallest values for each list in concatenated.
-    
-    Parameters:
-    - concatenated: List of arrays or lists, each containing numerical values.
-    - percentile: Percentile value to be used for calculating the top and bottom 5%. Default is 5%.
-    
-    Returns:
-    - result_array: List of percentage differences for each list in concatenated.
-    """
-    result_array = []
-
-    for data in concatenated:
-        # Sort the array
-        sorted_data = np.sort(data)
-
-        # Determine the number of elements in the 5% range
-        n = len(sorted_data)
-        top_n = int(np.ceil(n * (percentile / 100)))
-        
-        # Get the 5% smallest and 5% largest elements, then compute their averages
-        smallest_avg = np.mean(sorted_data[:top_n])
-        largest_avg = np.mean(sorted_data[-top_n:])
-
-        # Calculate percentage difference
-        if smallest_avg != 0:
-            percent_diff = ((largest_avg - smallest_avg) / smallest_avg) * 100
-        else:
-            percent_diff = float('inf')  # Handle division by zero if smallest average is zero
-
-        result_array.append(percent_diff)
-
-    return result_array
-
-
 def calculate_percent_diff(concatenated, percentile=5):
     """
     Calculate the percentage difference between the average of the top 5% largest 
@@ -6231,3 +6231,168 @@ def calculate_percent_diff(concatenated, percentile=5):
 
     return result_array, result_comb1, result_comb2, result_comb3, result_comb4
 
+def calculate_percent_diff_with_std(concatenated, percentile=5):
+    """
+    Calculate the percentage difference between the average of the top 5% largest 
+    and bottom 5% smallest values for each list in concatenated, including specified combinations.
+    Also calculates the standard deviation with proper error propagation.
+    
+    Parameters:
+    - concatenated: List of arrays or lists, each containing numerical values.
+    - percentile: Percentile value to be used for calculating the top and bottom 5%. Default is 5%.
+    
+    Returns:
+    - result_array: List of percentage differences and their std for each individual list in concatenated.
+    - result_comb1: Percentage difference and std for concatenated[0, 2, 4, 6, 8, 10, 12] combined.
+    - result_comb2: Percentage difference and std for concatenated[1, 3, 5, 7, 9, 11, 13] combined.
+    - result_comb3: Percentage difference and std for concatenated[14, 16, 18] combined.
+    - result_comb4: Percentage difference and std for concatenated[15, 17, 19] combined.
+    """
+    def calculate_diff_and_std(data, percentile):
+        sorted_data = np.sort(data)
+        n = len(sorted_data)
+        top_n = int(np.ceil(n * (percentile / 100)))
+
+        # Get the 5% smallest and 5% largest elements, then compute their averages and stds
+        smallest_values = sorted_data[:top_n]
+        largest_values = sorted_data[-top_n:]
+
+        smallest_avg = np.mean(smallest_values)
+        largest_avg = np.mean(largest_values)
+        
+        smallest_std = np.std(smallest_values)
+        largest_std = np.std(largest_values)
+
+        # Calculate percentage difference and propagate the error (std)
+        if smallest_avg != 0:
+            percent_diff = ((largest_avg - smallest_avg) / smallest_avg) * 100
+            # Error propagation formula for percentage difference
+            percent_diff_std = np.sqrt((largest_std / largest_avg)**2 + (smallest_std / smallest_avg)**2) * percent_diff
+        else:
+            percent_diff = float('inf')
+            percent_diff_std = float('inf')
+
+        return percent_diff, percent_diff_std
+
+    # Calculate for individual lists in concatenated
+    result_array = [calculate_diff_and_std(data, percentile) for data in concatenated]
+
+    # Combine specific arrays and calculate percentage difference
+    combined_1 = np.concatenate([concatenated[i] for i in [0, 2, 4, 6, 8, 10, 12]])
+    result_comb1 = calculate_diff_and_std(combined_1, percentile)
+
+    combined_2 = np.concatenate([concatenated[i] for i in [1, 3, 5, 7, 9, 11, 13]])
+    result_comb2 = calculate_diff_and_std(combined_2, percentile)
+
+    combined_3 = np.concatenate([concatenated[i] for i in [14, 16, 18]])
+    result_comb3 = calculate_diff_and_std(combined_3, percentile)
+
+    combined_4 = np.concatenate([concatenated[i] for i in [15, 17, 19]])
+    result_comb4 = calculate_diff_and_std(combined_4, percentile)
+
+    return result_array, result_comb1, result_comb2, result_comb3, result_comb4
+
+
+
+# def calculate_percent_diff_with_unumpy(concatenated, percentile=5):
+#     """
+#     Calculate the percentage difference between the average of the top 5% largest 
+#     and bottom 5% smallest values for each list in concatenated, using unumpy for error propagation.
+    
+#     Parameters:
+#     - concatenated: List of arrays or lists, each containing numerical values.
+#     - percentile: Percentile value to be used for calculating the top and bottom 5%. Default is 5%.
+    
+#     Returns:
+#     - result_array: List of percentage differences with uncertainties (from unumpy) for each individual list in concatenated.
+#     - result_comb1: Percentage difference for concatenated[0, 2, 4, 6, 8, 10, 12] combined.
+#     - result_comb2: Percentage difference for concatenated[1, 3, 5, 7, 9, 11, 13] combined.
+#     - result_comb3: Percentage difference for concatenated[14, 16, 18] combined.
+#     - result_comb4: Percentage difference for concatenated[15, 17, 19] combined.
+#     """
+#     def calculate_diff_with_unumpy(data, percentile):
+#         sorted_data = np.sort(data)
+#         n = len(sorted_data)
+#         top_n = int(np.ceil(n * (percentile / 100)))
+
+#         # Get the 5% smallest and 5% largest elements, compute their averages and stds
+#         smallest_values = sorted_data[:top_n]
+#         largest_values = sorted_data[-top_n:]
+
+#         smallest_avg = unp.uarray(np.mean(smallest_values), np.std(smallest_values))
+#         largest_avg = unp.uarray(np.mean(largest_values), np.std(largest_values))
+
+#         # Calculate percentage difference with unumpy handling the uncertainties
+#         percent_diff = ((largest_avg - smallest_avg) / smallest_avg) * 100
+
+#         return percent_diff
+
+#     # Calculate for individual lists in concatenated
+#     result_array = [calculate_diff_with_unumpy(data, percentile) for data in concatenated]
+
+#     # Combine specific arrays and calculate percentage difference
+#     combined_1 = np.concatenate([concatenated[i] for i in [0, 2, 4, 6, 8, 10, 12]])
+#     result_comb1 = calculate_diff_with_unumpy(combined_1, percentile)
+
+#     combined_2 = np.concatenate([concatenated[i] for i in [1, 3, 5, 7, 9, 11, 13]])
+#     result_comb2 = calculate_diff_with_unumpy(combined_2, percentile)
+
+#     combined_3 = np.concatenate([concatenated[i] for i in [14, 16, 18]])
+#     result_comb3 = calculate_diff_with_unumpy(combined_3, percentile)
+
+#     combined_4 = np.concatenate([concatenated[i] for i in [15, 17, 19]])
+#     result_comb4 = calculate_diff_with_unumpy(combined_4, percentile)
+
+#     return result_array, result_comb1, result_comb2, result_comb3, result_comb4
+
+def calculate_percent_diff_with_unumpy(concatenated, percentile=5):
+    """
+    Calculate the percentage difference between the average of the top 5% largest 
+    and bottom 5% smallest values for each list in concatenated, using unumpy for error propagation.
+    
+    Parameters:
+    - concatenated: List of arrays or lists, each containing numerical values.
+    - percentile: Percentile value to be used for calculating the top and bottom 5%. Default is 5%.
+    
+    Returns:
+    - result_array: List of tuples (percentage difference, uncertainty) for each individual list in concatenated.
+    - result_comb1: Tuple (percentage difference, uncertainty) for concatenated[0, 2, 4, 6, 8, 10, 12] combined.
+    - result_comb2: Tuple (percentage difference, uncertainty) for concatenated[1, 3, 5, 7, 9, 11, 13] combined.
+    - result_comb3: Tuple (percentage difference, uncertainty) for concatenated[14, 16, 18] combined.
+    - result_comb4: Tuple (percentage difference, uncertainty) for concatenated[15, 17, 19] combined.
+    """
+    def calculate_diff_with_unumpy(data, percentile):
+        sorted_data = np.sort(data)
+        n = len(sorted_data)
+        top_n = int(np.ceil(n * (percentile / 100)))
+
+        # Get the 5% smallest and 5% largest elements, compute their averages and stds
+        smallest_values = sorted_data[:top_n]
+        largest_values = sorted_data[-top_n:]
+
+        smallest_avg = unp.uarray(np.mean(smallest_values), np.std(smallest_values))
+        largest_avg = unp.uarray(np.mean(largest_values), np.std(largest_values))
+
+        # Calculate percentage difference with unumpy handling the uncertainties
+        percent_diff = ((largest_avg - smallest_avg) / smallest_avg) * 100
+
+        # Convert the results to float for both nominal value and standard deviation
+        return float(unp.nominal_values(percent_diff)), float(unp.std_devs(percent_diff))
+
+    # Calculate for individual lists in concatenated
+    result_array = [calculate_diff_with_unumpy(data, percentile) for data in concatenated]
+
+    # Combine specific arrays and calculate percentage difference
+    combined_1 = np.concatenate([concatenated[i] for i in [0, 2, 4, 6, 8, 10, 12]])
+    result_comb1 = calculate_diff_with_unumpy(combined_1, percentile)
+
+    combined_2 = np.concatenate([concatenated[i] for i in [1, 3, 5, 7, 9, 11, 13]])
+    result_comb2 = calculate_diff_with_unumpy(combined_2, percentile)
+
+    combined_3 = np.concatenate([concatenated[i] for i in [14, 16, 18]])
+    result_comb3 = calculate_diff_with_unumpy(combined_3, percentile)
+
+    combined_4 = np.concatenate([concatenated[i] for i in [15, 17, 19]])
+    result_comb4 = calculate_diff_with_unumpy(combined_4, percentile)
+
+    return result_array, result_comb1, result_comb2, result_comb3, result_comb4

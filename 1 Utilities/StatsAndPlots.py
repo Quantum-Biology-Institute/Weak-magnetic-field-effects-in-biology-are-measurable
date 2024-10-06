@@ -243,9 +243,13 @@ for idx in range(len(tests)):
     ##################
     #Comparison with paper "Natural size variation among embryos leads to the corresponding scaling in
     #gene expression#
-    result,          comb1,  comb2,  comb3,  comb4 = ut.calculate_percent_diff(concatenated, 5)
-    result_healthy, hcomb1, hcomb2, hcomb3, hcomb4 = ut.calculate_percent_diff(healthy_concatenated, 5)
-    klklklkl
+    
+    #result_individual,   comb1,  comb2,  comb3,  comb4 = ut.calculate_percent_diff_with_unumpy(concatenated,         5)
+    #result_individualh, comb1h, comb2h, comb3h, comb4h = ut.calculate_percent_diff_with_unumpy(healthy_concatenated, 5)
+    
+    #result_individual, comb1, comb2, comb3, comb4      = ut.calculate_percent_diff_with_std(concatenated,         5)
+    #result_individualh, comb1h, comb2h, comb3h, comb4h = ut.calculate_percent_diff_with_std(healthy_concatenated, 5)
+    #klklklklk
     #END Comparison with paper
     ##################
     ##################
