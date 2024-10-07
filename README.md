@@ -1,5 +1,5 @@
 # Weak-magnetic-field-effects-in-biology-are-measurable
-All data and code for the article, ["Weak magnetic field effects in biology are measurable—precision measurements of accelerated _Xenopus_ embryogenesis"](https://www.google.com). In the article, Supplementary Section SI69 is a guide to this GitHub repository. 
+All data and code for the article, ["Weak magnetic field effects in biology are measurable—accelerated _Xenopus_ embryogenesis in the absence of the geomagnetic field"](https://www.google.com). In the article, Supplementary Section SI69 is a guide to this GitHub repository. 
 
 If you're here to peruse the data: first, check folder [10 Posters](https://github.com/Quantum-Biology-Institute/Weak-magnetic-field-effects-in-biology-are-measurable/tree/main/10%20Posters), with posters containing 3-day images for all the more than 2,750 tadpoles we tracked. In the article, Supplementary Section SI71 is a guide to these posters. 
 
